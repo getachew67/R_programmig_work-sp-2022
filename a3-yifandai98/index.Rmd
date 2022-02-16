@@ -1,0 +1,40 @@
+---
+title: "Index"
+author: "Yifan Dai"
+date: "2/20/2021"
+output: html_document
+---
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include = FALSE}
+## Source in the other script
+source("analysis.R")
+# Load the `knitr` library
+library(knitr)
+```
+# Introduction
+Hi! This is my first report about the variable population of Asian American in jail `aapi_jail_pop`, total in jail `total_jail_pop`, Black people in jail `black_jail_pop`, white people in jail `white_jail_pop`, and location `state`. The reason I choose them to analyze are because I want to know is there any **relationship** between **_races_** in population in jail, what the **ratio** of **population in jail for each race** _verses_ **total population in jail** is, and is location a factor of crimes. Therefore, the domain of my interests for this reseach are between population in _jail_ for each race and _state_. Here is the link of my data source from vera-institute on github: [incarceration trends](https://github.com/vera-institute/incarceration-trends/blob/master/incarceration_trends.csv?raw=true) 
+
+# Summary Information
+The **_average values_** of my variable `aapi_jail_pop` across **all** of counties is `r avg_aapi_jail`.The **highest** `aapi_jail_pop` is `r highest_aapi_jail` at `r location_highest_aaj` in `r year_highest_aapi`, and the **lowest** `aapi_jail_pop` is `r lowest_aapi_jail`.
+
+# Charts
+Below is the **population in jail over time chart** that shows how _Asian American, Black, White, and Total_ population in jail changed over **1970-2018**. It can tell me the **trends** for those races over time and compare to each other. As shown below, the population of white in jail **_surpassed_** black in jail in **2000**. The population of Asian in jail around **0** over time, probably because most of the Asian family are more cautious **not** getting involved into crimes. 
+
+```{r echo = F}
+plot
+```
+
+Next, I compared _Asian American's population in jail_ and _total population in jail_, filtering **top 10** states with that values. The **most** Asian American's population in jail is in **Texas(TX)**, while the **lowest** one is in **Vermont(VT)**. The overall seems that Asian American **did not** get much involved into crimes since their population in top 10 states is much **lower** than the total population in these states.
+
+```{r echo = F}
+comparison
+```
+
+The third and last chart I created is the map of _the ratio of Asian American in jail : Total in jail in the United States_. The lighter red it colored, the bigger ratio it is, and vice. The top states that has the **most** Asian American in jail:Total in jail are locating at _Minnesota, Washington, Utah._  
+
+```{r echo = F}
+aapi_map
+```
